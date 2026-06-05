@@ -1,0 +1,20 @@
+name: cache-gateway-test 1
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  cache-test:
+    runs-on: monkci-ubuntu-24.04-4
+    steps:
+      - name: Create test file
+        run: |
+          mkdir -p ~/.cache-gateway-test
+          echo "Hello from cache $(date)" > ~/.cache-gateway-test/test.txt
+          cat ~/.cache-gateway-test/test.txt
+          
+      - name: Save cache
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache-gateway-test
+          key: test-linux-v1

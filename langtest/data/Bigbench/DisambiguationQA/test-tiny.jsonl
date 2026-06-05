@@ -1,0 +1,50 @@
+{"question": "After meeting with the producers, Sam went to his office.", "answer": "B. The office was Sam's office", "options": "A. The office was the producers' office\nB. The office was Sam's office\nC. Ambiguous"}
+{"question": "After meeting with the producers, Sam went to her office.", "answer": "B. The office was Sam's office", "options": "A. The office was the producers' office\nB. The office was Sam's office\nC. Ambiguous"}
+{"question": "After meeting with the producers, Sam went to their office.", "answer": "C. Ambiguous", "options": "A. The office was the producers' office\nB. The office was Sam's office\nC. Ambiguous"}
+{"question": "Bailey planned to meet the director at his office", "answer": "C. Ambiguous", "options": "A. The office was the director's office\nB. The office was Bailey's office\nC. Ambiguous"}
+{"question": "Bailey planned to meet the director at her office", "answer": "C. Ambiguous", "options": "A. The office was the director's office\nB. The office was Bailey's office\nC. Ambiguous"}
+{"question": "Bailey planned to meet the director at their office", "answer": "C. Ambiguous", "options": "A. The office was the director's office\nB. The office was Bailey's office\nC. Ambiguous"}
+{"question": "Alex told us that he could not meet.", "answer": "A. Alex could not meet", "options": "A. Alex could not meet\nB. We could not meet\nC. Ambiguous"}
+{"question": "Alex told us that she could not meet.", "answer": "A. Alex could not meet", "options": "A. Alex could not meet\nB. We could not meet\nC. Ambiguous"}
+{"question": "Alex told us that they could not meet.", "answer": "A. Alex could not meet", "options": "A. Alex could not meet\nB. We could not meet\nC. Ambiguous"}
+{"question": "The scientist collaborated with the artist, and he shared a story.", "answer": "C. Ambiguous", "options": "A. The scientist shared a story\nB. The artist shared a story\nC. Ambiguous"}
+{"question": "The scientist collaborated with the artist, and she shared a story.", "answer": "C. Ambiguous", "options": "A. The scientist shared a story\nB. The artist shared a story\nC. Ambiguous"}
+{"question": "The scientist collaborated with the artist, and they shared a story.", "answer": "C. Ambiguous", "options": "A. The scientist shared a story\nB. The artist shared a story\nC. Ambiguous"}
+{"question": "The manager sent a message to the secretary, but he didn't reply yet.", "answer": "A. The secretary didn't reply yet", "options": "A. The secretary didn't reply yet\nB. The manager didn't reply yet\nC. Ambiguous"}
+{"question": "The manager sent a message to the secretary, but she didn't reply yet.", "answer": "A. The secretary didn't reply yet", "options": "A. The secretary didn't reply yet\nB. The manager didn't reply yet\nC. Ambiguous"}
+{"question": "The manager sent a message to the secretary, but they didn't reply yet.", "answer": "A. The secretary didn't reply yet", "options": "A. The secretary didn't reply yet\nB. The manager didn't reply yet\nC. Ambiguous"}
+{"question": "My parent called his secretary for more information", "answer": "A. They were my parent's secretary", "options": "A. They were my parent's secretary\nB. They were the secretary's secretary\nC. Ambiguous"}
+{"question": "My parent called her secretary for more information", "answer": "A. They were my parent's secretary", "options": "A. They were my parent's secretary\nB. They were the secretary's secretary\nC. Ambiguous"}
+{"question": "My parent called their secretary for more information", "answer": "A. They were my parent's secretary", "options": "A. They were my parent's secretary\nB. They were the secretary's secretary\nC. Ambiguous"}
+{"question": "My cousin called his boss for more information", "answer": "A. They were my cousin's boss", "options": "A. They were my cousin's boss\nB. They were the boss's boss\nC. Ambiguous"}
+{"question": "My cousin called her boss for more information", "answer": "A. They were my cousin's boss", "options": "A. They were my cousin's boss\nB. They were the boss's boss\nC. Ambiguous"}
+{"question": "My cousin called their boss for more information", "answer": "A. They were my cousin's boss", "options": "A. They were my cousin's boss\nB. They were the boss's boss\nC. Ambiguous"}
+{"question": "The visitor told the teacher that he liked the cake.", "answer": "A. The visitor liked the cake", "options": "A. The visitor liked the cake\nB. The teacher liked the cake\nC. Ambiguous"}
+{"question": "The visitor told the teacher that she liked the cake.", "answer": "A. The visitor liked the cake", "options": "A. The visitor liked the cake\nB. The teacher liked the cake\nC. Ambiguous"}
+{"question": "The visitor told the teacher that they liked the cake.", "answer": "A. The visitor liked the cake", "options": "A. The visitor liked the cake\nB. The teacher liked the cake\nC. Ambiguous"}
+{"question": "The customer and the chef discussed his culinary training.", "answer": "B. It was the chef's culinary training", "options": "A. It was the customer's culinary training\nB. It was the chef's culinary training\nC. Ambiguous"}
+{"question": "The customer and the chef discussed her culinary training.", "answer": "B. It was the chef's culinary training", "options": "A. It was the customer's culinary training\nB. It was the chef's culinary training\nC. Ambiguous"}
+{"question": "The customer and the chef discussed their culinary training.", "answer": "B. It was the chef's culinary training", "options": "A. It was the customer's culinary training\nB. It was the chef's culinary training\nC. Ambiguous"}
+{"question": "This story could not be published without the writer and his friends' support.", "answer": "A. They were the writer's friends", "options": "A. They were the writer's friends\nB. They were the friends' friends\nC. They were the story's friends\nD. Ambiguous"}
+{"question": "This story could not be published without the writer and her friends' support.", "answer": "A. They were the writer's friends", "options": "A. They were the writer's friends\nB. They were the friends' friends\nC. They were the story's friends\nD. Ambiguous"}
+{"question": "This story could not be published without the writer and their friends' support.", "answer": "A. They were the writer's friends", "options": "A. They were the writer's friends\nB. They were the friends' friends\nC. They were the story's friends\nD. Ambiguous"}
+{"question": "Before he sent the letter, Alex did not know Taylor.", "answer": "C. Ambiguous", "options": "A. Alex sent the letter\nB. Taylor sent the letter\nC. Ambiguous"}
+{"question": "Before she sent the letter, Alex did not know Taylor.", "answer": "C. Ambiguous", "options": "A. Alex sent the letter\nB. Taylor sent the letter\nC. Ambiguous"}
+{"question": "Before they sent the letter, Alex did not know Taylor.", "answer": "C. Ambiguous", "options": "A. Alex sent the letter\nB. Taylor sent the letter\nC. Ambiguous"}
+{"question": "Alex did not know Taylor until he sent a letter.", "answer": "C. Ambiguous", "options": "A. Alex sent the letter\nB. Taylor sent the letter\nC. Ambiguous"}
+{"question": "Alex did not know Taylor until she sent a letter.", "answer": "C. Ambiguous", "options": "A. Alex sent the letter\nB. Taylor sent the letter\nC. Ambiguous"}
+{"question": "Alex did not know Taylor until they sent a letter.", "answer": "C. Ambiguous", "options": "A. Alex sent the letter\nB. Taylor sent the letter\nC. Ambiguous"}
+{"question": "After meeting with the producers, Sam goes to his office.", "answer": "A. It is Sam's office", "options": "A. It is Sam's office\nB. It is the producers' office\nC. Ambiguous"}
+{"question": "After meeting with the producers, Sam goes to her office.", "answer": "A. It is Sam's office", "options": "A. It is Sam's office\nB. It is the producers' office\nC. Ambiguous"}
+{"question": "After meeting with the producers, Sam goes to their office.", "answer": "C. Ambiguous", "options": "A. It is Sam's office\nB. It is the producers' office\nC. Ambiguous"}
+{"question": "Bailey plans to meet the director at his office", "answer": "C. Ambiguous", "options": "A. It is Bailey's office\nB. It is the director's office\nC. Ambiguous"}
+{"question": "Bailey plans to meet the director at her office", "answer": "C. Ambiguous", "options": "A. It is Bailey's office\nB. It is the director's office\nC. Ambiguous"}
+{"question": "Bailey plans to meet the director at their office", "answer": "C. Ambiguous", "options": "A. It is Bailey's office\nB. It is the director's office\nC. Ambiguous"}
+{"question": "Alex tells us that he could not meet.", "answer": "A. Alex could not meet", "options": "A. Alex could not meet\nB. We could not meet\nC. Ambiguous"}
+{"question": "Alex tells us that she could not meet.", "answer": "A. Alex could not meet", "options": "A. Alex could not meet\nB. We could not meet\nC. Ambiguous"}
+{"question": "Alex tells us that they could not meet.", "answer": "A. Alex could not meet", "options": "A. Alex could not meet\nB. We could not meet\nC. Ambiguous"}
+{"question": "The scientist collaborates with the artist, and he shares a story.", "answer": "C. Ambiguous", "options": "A. The scientist shares a story\nB. The artist shares a story\nC. Ambiguous"}
+{"question": "The scientist collaborates with the artist, and she shares a story.", "answer": "C. Ambiguous", "options": "A. The scientist shares a story\nB. The artist shares a story\nC. Ambiguous"}
+{"question": "The scientist collaborates with the artist, and they share a story.", "answer": "C. Ambiguous", "options": "A. The scientist shares a story\nB. The artist shares a story\nC. Ambiguous"}
+{"question": "The visitor tells the teacher that he likes the cake.", "answer": "A. The visitor likes the cake", "options": "A. The visitor likes the cake\nB. The teacher likes the cake\nC. Ambiguous"}
+{"question": "The visitor tells the teacher that she likes the cake.", "answer": "A. The visitor likes the cake", "options": "A. The visitor likes the cake\nB. The teacher likes the cake\nC. Ambiguous"}

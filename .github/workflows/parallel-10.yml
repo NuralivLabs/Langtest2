@@ -1,0 +1,29 @@
+name: Concurrency Test - Parallel Jobs 10 by Mahesh
+on:
+  workflow_dispatch:
+
+jobs:
+  parallel-test:
+    name: Job ${{ matrix.job-id }}
+    runs-on: monkci-ubuntu-24.04-4
+    strategy:
+      fail-fast: false
+      max-parallel: 50
+      matrix:
+        job-id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    steps:
+      - name: START marker
+        run: |
+          echo "UJJWAL_JOB_STARTED_${{ matrix.job-id }} run=${{ github.run_id }} at $(date -u +%FT%T.%3NZ) host=$(hostname)"
+
+      - name: Workload (5 min)
+        run: |
+          end=$((SECONDS + 300))
+          for i in $(seq 1 $(nproc)); do
+            ( while [ $SECONDS -lt $end ]; do :; done ) &
+          done
+          wait
+
+      - name: END marker
+        run: |
+          echo "UJJWAL_JOB_COMPLETED_${{ matrix.job-id }} run=${{ github.run_id }} at $(date -u +%FT%T.%3NZ) host=$(hostname)"

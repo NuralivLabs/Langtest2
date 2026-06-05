@@ -1,0 +1,22 @@
+name: agent-test
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: monkci-ubuntu-24.04-2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install pytest
+        run: pip install pytest
+
+      - name: Run demo tests
+        run: python -m pytest tests/test_agent_demo.py -q

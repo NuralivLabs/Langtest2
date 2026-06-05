@@ -1,0 +1,296 @@
+header:
+  - title: Home
+    url: /
+  - title: Docs
+    url: /docs/pages/docs/quickstart
+    key: docs
+  - title: Tutorials
+    url: /docs/pages/tutorials/test_specific_notebooks
+    key: tutorials
+  - title: Tests
+    url: /docs/pages/tests/test
+    key: tests
+  - title: Benchmarks
+    url: /docs/pages/benchmarks/benchmark
+    key: benchmarks
+  - title: Leaderboard
+    url: /leaderboard/llm
+    key: benchmarks
+  - title: Blog
+    url: https://www.johnsnowlabs.com/responsible-ai-blog/
+    key: blog
+
+
+docs-menu:
+  - title: Quick Start
+    url: /docs/pages/docs/quickstart
+    children:
+        - title: Getting Started
+          url: /docs/pages/docs/quickstart
+        - title: Installation
+          url: /docs/pages/docs/install
+        - title:  One Liners
+          url:    /docs/pages/docs/one_liner
+        - title:  Integrations
+          url:    /docs/pages/docs/integrations
+
+  - title: General Concepts
+    url: /docs/pages/docs/harness
+    children:
+        - title: Harness
+          url: /docs/pages/docs/harness
+        - title: Task
+          url: /docs/pages/docs/task
+        - title: Model
+          url: /docs/pages/docs/model
+        - title: Hub
+          url: /docs/pages/docs/hub
+        - title: Data
+          url: /docs/pages/docs/data
+        - title: Config
+          url: /docs/pages/docs/config
+        - title: Test Categories
+          url: /docs/pages/docs/test_categories
+
+  - title: Testing Workflow
+    url: /docs/pages/docs/generate
+    children:
+        - title: Generating Test Cases
+          url: /docs/pages/docs/generate
+        - title: Running Test Cases
+          url: /docs/pages/docs/run
+        - title: Retrieving Reports
+          url: /docs/pages/docs/report
+        - title: MlFlow Tracking
+          url: /docs/pages/docs/ml_flow
+        - title: LangTestCallback
+          url: /docs/pages/docs/hf-callback
+
+  - title: Saving & Loading
+    url: /docs/pages/docs/save
+    children:
+        - title: Save
+          url: /docs/pages/docs/save
+        - title: Load
+          url: /docs/pages/docs/load
+  
+  - title: Data Augmentation
+    url: /docs/pages/docs/generate_augmentation
+    children:
+        - title: Generating Augmentations
+          url: /docs/pages/docs/generate_augmentation
+
+  - title: RAG
+    url: /docs/pages/docs/rag
+    children:
+        - title: RAG 
+          url: /docs/pages/docs/rag
+    
+  - title: Contribute to LangTest
+    url: /docs/pages/docs/contribute
+    children:
+        - title: Contribution Guidelines
+          url: /docs/pages/docs/contribute
+          
+  - title: Release Notes
+    url: /docs/pages/docs/langtest_versions/latest_release
+
+tutorials:
+  - title: Test Specific Notebooks
+    url: /docs/pages/tutorials/test_specific_notebooks
+    children:
+        - title: Accuracy
+          url: /docs/pages/tutorials/test_specific_notebooks/accuracy
+        - title: Representation
+          url: /docs/pages/tutorials/test_specific_notebooks/representation
+        - title: Bias
+          url: /docs/pages/tutorials/test_specific_notebooks/bias
+        - title: Robustness
+          url: /docs/pages/tutorials/test_specific_notebooks/robustness
+        - title: Fairness
+          url: /docs/pages/tutorials/test_specific_notebooks/fairness
+        - title: Performance
+          url: /docs/pages/tutorials/test_specific_notebooks/performance
+        - title: Translation 
+          url: /docs/pages/tutorials/test_specific_notebooks/translation          
+        - title: Stereotype
+          url: /docs/pages/tutorials/test_specific_notebooks/stereotype
+        - title: Stereoset 
+          url: /docs/pages/tutorials/test_specific_notebooks/stereoset
+        - title: Grammar 
+          url: /docs/pages/tutorials/test_specific_notebooks/grammar
+  - title: LLM Testing Notebooks
+    url: /docs/pages/tutorials/llm_testing_notebooks
+    children:
+        - title: Question-Answering and Summarization
+          url: /docs/pages/tutorials/llm_testing_notebooks/QA_Sum
+        - title: Toxicity
+          url: /docs/pages/tutorials/llm_testing_notebooks/toxicity
+        - title: Clinical
+          url: /docs/pages/tutorials/llm_testing_notebooks/clinical
+        - title: Ideology
+          url: /docs/pages/tutorials/llm_testing_notebooks/ideology
+        - title: Disinformation
+          url: /docs/pages/tutorials/llm_testing_notebooks/disinformation
+        - title: Factuality
+          url: /docs/pages/tutorials/llm_testing_notebooks/factuality
+        - title: Legal-Tests
+          url: /docs/pages/tutorials/llm_testing_notebooks/legal_tests
+        - title: Security
+          url: /docs/pages/tutorials/llm_testing_notebooks/security
+        - title: Sensitivity
+          url: /docs/pages/tutorials/llm_testing_notebooks/sensitivity
+        - title: Sycophancy
+          url: /docs/pages/tutorials/llm_testing_notebooks/sycophancy
+        - title: Stereotype
+          url: /docs/pages/tutorials/llm_testing_notebooks/stereotype
+        - title: LM Studio
+          url: /docs/pages/tutorials/llm_testing_notebooks/lm_studio
+        - title: Question-Answering Benchmarking
+          url: /docs/pages/tutorials/llm_testing_notebooks/question_answering_benchmarking
+  - title: Miscellaneous Notebooks
+    url: /docs/pages/tutorials/miscellaneous_notebooks
+    children:
+        - title: Comparing Models
+          url: /docs/pages/tutorials/miscellaneous_notebooks/comparing_models
+        - title: Custom Hub
+          url: /docs/pages/tutorials/miscellaneous_notebooks/custom_hub
+        - title: Different Report Formats
+          url: /docs/pages/tutorials/miscellaneous_notebooks/different_report_formats
+        - title: Editing Testcases
+          url: /docs/pages/tutorials/miscellaneous_notebooks/editing_testcases
+        - title: Evaluation Metrics
+          url: /docs/pages/tutorials/miscellaneous_notebooks/evaluation_metrics
+  - title: RAG Tutorials
+    url: /docs/pages/tutorials/rag
+  - title: Benchmark Dataset Notebooks
+    url: /docs/pages/tutorials/benchmark_dataset_notebooks
+  - title: End-to-End Workflow Notebooks
+    url: /docs/pages/tutorials/end_to_end_workflow_notebooks
+
+tests:
+  - title: Tests
+    url: /docs/pages/tests/test
+  - title: Benchmark Datasets 
+    url: /docs/pages/benchmarks/benchmark
+  - title: Accuracy
+    url: /docs/pages/tests/accuracy
+  - title: Bias
+    url: /docs/pages/tests/bias
+  - title: Fairness
+    url: /docs/pages/tests/fairness
+  - title: Representation
+    url: /docs/pages/tests/representation
+  - title: Robustness
+    url: /docs/pages/tests/robustness
+  - title: Grammar
+    url: /docs/pages/tests/grammar
+  - title: Toxicity
+    url: /docs/pages/tests/toxicity
+  - title: Clinical
+    url: /docs/pages/tests/clinical
+  - title: Security
+    url: /docs/pages/tests/security
+  - title: Disinformation
+    url: /docs/pages/tests/disinformation
+  - title: Sensitivity
+    url: /docs/pages/tests/sensitivity
+  - title: Factuality
+    url: /docs/pages/tests/factuality
+  - title: Stereotype
+    url: /docs/pages/tests/stereotype
+  - title: StereoSet
+    url: /docs/pages/tests/stereoset
+  - title: Legal 
+    url: /docs/pages/tests/legal
+  - title: Sycophancy 
+    url: /docs/pages/tests/sycophancy
+  - title: Ideology 
+    url: /docs/pages/tests/ideology
+
+
+benchmarks:
+  - title: Medical
+    url: /docs/pages/benchmarks/medical
+    children:
+      - title: MedMCQA
+        url: /docs/pages/benchmarks/medical/medmcqa
+      - title: MedQA
+        url: /docs/pages/benchmarks/medical/medqa
+      - title: PubMedQA
+        url: /docs/pages/benchmarks/medical/pubmedqa
+      - title: LiveQA
+        url: /docs/pages/benchmarks/medical/liveqa
+      - title: HealthSearchQA
+        url: /docs/pages/benchmarks/medical/healthsearchqa
+      - title: MedicationQA
+        url: /docs/pages/benchmarks/medical/medicationqa
+  - title:  Commonsense Scenario
+    url: /docs/pages/benchmarks/commonsense_scenario
+    children:
+      - title: CommonsenseQA
+        url: /docs/pages/benchmarks/commonsense_scenario/commonsenseqa
+      - title: HellaSwag
+        url: /docs/pages/benchmarks/commonsense_scenario/hellaswag
+      - title: OpenBookQA
+        url: /docs/pages/benchmarks/commonsense_scenario/openbookqa
+      - title: PIQA
+        url: /docs/pages/benchmarks/commonsense_scenario/piqa
+      - title: SIQA
+        url: /docs/pages/benchmarks/commonsense_scenario/siqa
+  - title : Legal
+    url: /docs/pages/benchmarks/legal
+    children:
+      - title: Contracts
+        url: /docs/pages/benchmarks/legal/contracts
+      - title: Consumer-Contracts
+        url: /docs/pages/benchmarks/legal/consumer-contracts
+      - title: Privacy-Policy
+        url: /docs/pages/benchmarks/legal/privacy-policy
+      - title: FIQA
+        url: /docs/pages/benchmarks/legal/fiqa
+      - title: MultiLexSum
+        url: /docs/pages/benchmarks/legal/multilexsum
+  - title:  Other Benchmarks
+    url: /docs/pages/benchmarks/other_benchmarks
+    children:
+      - title: ASDiv
+        url: /docs/pages/benchmarks/other_benchmarks/asdiv
+      - title: BBQ
+        url: /docs/pages/benchmarks/other_benchmarks/bbq
+      - title: Bigbench
+        url: /docs/pages/benchmarks/other_benchmarks/bigbench
+      - title: BoolQ
+        url: /docs/pages/benchmarks/other_benchmarks/boolq
+      - title: LogiQA
+        url: /docs/pages/benchmarks/other_benchmarks/logiqa
+      - title: MMLU
+        url: /docs/pages/benchmarks/other_benchmarks/mmlu
+      - title: NarrativeQA
+        url: /docs/pages/benchmarks/other_benchmarks/narrativeqa
+      - title: NQ-open
+        url: /docs/pages/benchmarks/other_benchmarks/nq-open
+      - title: Quac
+        url: /docs/pages/benchmarks/other_benchmarks/quac
+      - title: TruthfulQA
+        url: /docs/pages/benchmarks/other_benchmarks/truthfulqa
+      - title: XSum
+        url: /docs/pages/benchmarks/other_benchmarks/xsum
+
+task:
+  - title: Task
+    url: /docs/pages/docs/task
+  - title: Ner
+    url: /docs/pages/task/ner
+  - title: Text Classification
+    url: /docs/pages/task/text-classification
+  - title: Question Answering
+    url: /docs/pages/task/question-answering
+  - title: Summarization
+    url: /docs/pages/task/summarization
+  - title: Text Generation
+    url: /docs/pages/task/text-generation
+  - title: Fill Mask
+    url: /docs/pages/task/fill-mask
+  - title: Translation
+    url: /docs/pages/task/translation

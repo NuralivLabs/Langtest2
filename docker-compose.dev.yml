@@ -1,0 +1,49 @@
+services:
+  # Redis Service
+  redis:
+    image: redis:7-alpine
+    container_name: django_redis_dev
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+    networks:
+      - django_network
+
+  # Django Web Application (Development)
+  web:
+    build: .
+    container_name: django_web_dev
+    volumes:
+      - .:/app
+      - static_volume:/app/static
+      - media_volume:/app/media
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=True
+      - DJANGO_SETTINGS_MODULE=core.settings
+      - CELERY_BROKER_URL=redis://redis:6379/0
+      - CELERY_RESULT_BACKEND=redis://redis:6379/0
+      - CELERY_TASK_ALWAYS_EAGER=False
+      - ALLOWED_HOSTS=localhost,127.0.0.1,0.0.0.0
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - django_network
+
+volumes:
+  redis_data:
+  static_volume:
+  media_volume:
+
+networks:
+  django_network:
+    driver: bridge 

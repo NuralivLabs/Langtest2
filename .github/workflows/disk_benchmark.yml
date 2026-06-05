@@ -1,0 +1,42 @@
+name: Disk Benchmark
+
+on:
+  workflow_dispatch:
+
+jobs:
+  bench:
+    runs-on: monkci-ubuntu-24.04-2   # 2 vCPU, 7 GB RAM
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5]        # 5 parallel jobs
+    name: bench-${{ matrix.shard }}
+    timeout-minutes: 10               # 5 min run + setup headroom
+    steps:
+      - name: Storage available
+        run: |
+          echo "=== df -h ==="
+          df -h
+          echo
+          echo "=== lsblk ==="
+          lsblk -o NAME,SIZE,TYPE,MOUNTPOINT,ROTA,MODEL
+          echo
+          echo "=== /proc/mounts (real disks) ==="
+          grep -E '^/dev/' /proc/mounts || true
+
+      - name: Install fio
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fio
+
+      - name: Measure IOPS for 5 minutes (4k random read+write, direct I/O)
+        run: |
+          mkdir -p /tmp/fio && cd /tmp/fio
+          fio --name=iops_test \
+              --filename=testfile \
+              --size=1G \
+              --rw=randrw --rwmixread=70 \
+              --bs=4k \
+              --ioengine=libaio --iodepth=32 --direct=1 \
+              --runtime=300 --time_based \
+              --group_reporting \
+              --output-format=normal
+          rm -f testfile

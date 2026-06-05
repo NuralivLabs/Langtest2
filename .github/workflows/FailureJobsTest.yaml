@@ -1,0 +1,153 @@
+name: Failure Jobs with concurrency
+on:
+  workflow_dispatch:
+jobs:
+  parallel-test:
+    name: Job ${{ matrix.job-id }}
+    runs-on: monkci-ubuntu-24.04-2
+    strategy:
+      fail-fast: false
+      max-parallel: 101
+      matrix:
+        job-id: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
+                 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+                 21, 22, 23, 24, 25, 26, 27, 28, 29, 30,
+                 31, 32, 33, 34, 35, 36, 37, 38, 39, 40,
+                 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+                 51, 52, 53, 54, 55, 56, 57, 58, 59, 60,
+                 61, 62, 63, 64, 65, 66, 67, 68, 69, 70,
+                 71, 72, 73, 74, 75, 76, 77, 78, 79, 80,
+                 81, 82, 83, 84, 85, 86, 87, 88, 89, 90,
+                 91, 92, 93, 94, 95, 96, 97, 98, 99, 100,
+                 101]
+    steps:
+      - name: START marker
+        run: |
+          echo "UJJWAL_JOB_STARTED_${{ matrix.job-id }} run=${{ github.run_id }} at $(date -u +%FT%T.%3NZ) host=$(hostname)"
+
+      - name: Assign chaos scenario
+        run: |
+          JOB_ID=${{ matrix.job-id }}
+          case $((JOB_ID % 20)) in
+            3)  SCENARIO="fail-npm" ;;
+            7)  SCENARIO="fail-compile" ;;
+            11) SCENARIO="fail-permission" ;;
+            14) SCENARIO="fail-oom" ;;
+            18) SCENARIO="fail-test" ;;
+            *)  SCENARIO="pass" ;;
+          esac
+          echo "SCENARIO=$SCENARIO" >> $GITHUB_ENV
+          echo "Job $JOB_ID scenario: $SCENARIO"
+
+      - name: Install dependencies
+        run: |
+          if [ "$SCENARIO" = "fail-npm" ]; then
+            echo "Installing dependencies..."
+            echo "$ npm ci --production"
+            echo "npm WARN deprecated [email protected]: this library is no longer supported"
+            echo "npm WARN deprecated [email protected]: Glob versions prior to v9 are no longer supported"
+            sleep 2
+            echo "npm ERR! code ENOENT"
+            echo "npm ERR! syscall open"
+            echo "npm ERR! path /workspace/package-lock.json"
+            echo "npm ERR! errno -2"
+            echo "npm ERR! enoent ENOENT: no such file or directory, open '/workspace/package-lock.json'"
+            echo "npm ERR! enoent This is related to npm not being able to find a file."
+            echo "npm ERR! A complete log of this run can be found in: /root/.npm/_logs/2026-05-12T09_23_47_123Z-debug-0.log"
+            exit 1
+          fi
+          echo "Dependencies OK"
+
+      - name: Build
+        run: |
+          if [ "$SCENARIO" = "fail-compile" ]; then
+            echo "Building project..."
+            echo "$ make -j$(nproc)"
+            echo "gcc -Wall -Wextra -O2 -Iinclude -c src/parser.c -o build/parser.o"
+            echo "gcc -Wall -Wextra -O2 -Iinclude -c src/handler.c -o build/handler.o"
+            sleep 3
+            echo "src/handler.c: In function 'process_request':"
+            echo "src/handler.c:87:12: error: 'request_ctx' undeclared (first use in this function); did you mean 'request_t'?"
+            echo "   87 |     ctx = request_ctx->session;"
+            echo "      |           ^~~~~~~~~~~"
+            echo "      |           request_t"
+            echo "src/handler.c:87:12: note: each undeclared identifier is reported only once for each function it appears in"
+            echo "src/handler.c:92:5: warning: implicit declaration of function 'free_session' [-Wimplicit-function-declaration]"
+            echo "   92 |     free_session(ctx);"
+            echo "      |     ^~~~~~~~~~~~"
+            echo "make: *** [Makefile:34: build/handler.o] Error 1"
+            echo "make: *** Waiting for unfinished jobs...."
+            exit 2
+          fi
+          if [ "$SCENARIO" = "fail-permission" ]; then
+            echo "Preparing build cache..."
+            echo "$ mkdir -p /var/cache/buildkit && chmod 0750 /var/cache/buildkit"
+            echo "mkdir: cannot create directory '/var/cache/buildkit': Permission denied"
+            echo "ERROR: failed to initialize build environment"
+            echo "       see https://docs.example.com/troubleshooting#perm-denied"
+            exit 13
+          fi
+          echo "Build OK"
+
+      - name: Workload (5 min)
+        run: |
+          end=$((SECONDS + 300))
+          if [ "$SCENARIO" = "fail-oom" ]; then
+            # Run for ~75s then simulate an OOM kill
+            mid_end=$((SECONDS + 75))
+            for i in $(seq 1 $(nproc)); do
+              ( while [ $SECONDS -lt $mid_end ]; do :; done ) &
+            done
+            wait
+            echo "[worker] heap usage: 1247 MB / 2048 MB"
+            echo "[worker] heap usage: 1689 MB / 2048 MB"
+            echo "[worker] heap usage: 1934 MB / 2048 MB"
+            echo "[kernel] Out of memory: Killed process 28471 (node) total-vm:2147483kB, anon-rss:1998212kB"
+            echo "[kernel] oom_reaper: reaped process 28471 (node)"
+            echo "Killed"
+            echo "FATAL: workload process exited with signal SIGKILL (137)"
+            exit 137
+          fi
+          for i in $(seq 1 $(nproc)); do
+            ( while [ $SECONDS -lt $end ]; do :; done ) &
+          done
+          wait
+
+      - name: Run tests
+        run: |
+          if [ "$SCENARIO" = "fail-test" ]; then
+            echo "Running test suite..."
+            echo ""
+            echo " PASS  src/utils/parser.test.ts"
+            echo " PASS  src/utils/formatter.test.ts"
+            echo " PASS  src/auth/login.test.ts"
+            echo " PASS  src/auth/session.test.ts"
+            echo " PASS  src/db/migrations.test.ts"
+            echo " FAIL  src/api/handler.test.ts"
+            echo "  ● APIHandler › should return 200 on valid request"
+            echo ""
+            echo "    expect(received).toBe(expected) // Object.is equality"
+            echo ""
+            echo "    Expected: 200"
+            echo "    Received: 503"
+            echo ""
+            echo "      45 |     const res = await handler.process(validRequest);"
+            echo "      46 |     expect(res.status).toBe(200);"
+            echo "    > 47 |     expect(res.body.id).toBeDefined();"
+            echo "         |                         ^"
+            echo "      48 |   });"
+            echo ""
+            echo "      at Object.<anonymous> (src/api/handler.test.ts:47:25)"
+            echo ""
+            echo "Test Suites: 1 failed, 8 passed, 9 total"
+            echo "Tests:       1 failed, 47 passed, 48 total"
+            echo "Snapshots:   0 total"
+            echo "Time:        12.847 s"
+            echo "Ran all test suites."
+            exit 1
+          fi
+          echo "All checks passed"
+
+      - name: END marker
+        run: |
+          echo "UJJWAL_JOB_COMPLETED_${{ matrix.job-id }} run=${{ github.run_id }} at $(date -u +%FT%T.%3NZ) host=$(hostname)"
