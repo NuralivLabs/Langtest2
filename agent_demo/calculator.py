@@ -2,8 +2,7 @@
 
 
 def add(a, b):
-    # BUG: this subtracts instead of adding.
-    return a - b
+    return a + b
 
 
 def multiply(a, b):
