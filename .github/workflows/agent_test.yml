@@ -24,5 +24,5 @@ jobs:
       - name: Long running step (simulate ~2 min job)
         run: |
           echo "Starting long step at $(date -u +%FT%TZ)"
-          sleep 120
+          sleep 300
           echo "Finished long step at $(date -u +%FT%TZ)"
