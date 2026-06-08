@@ -21,8 +21,8 @@ jobs:
       - name: Run demo tests
         run: python -m pytest tests/test_agent_demo.py -q
 
-      - name: Long running step (simulate ~10 min job)
+      - name: Long running step (simulate ~3 min job)
         run: |
           echo "Starting long step at $(date -u +%FT%TZ)"
-          sleep 600
+          sleep 180
           echo "Finished long step at $(date -u +%FT%TZ)"
