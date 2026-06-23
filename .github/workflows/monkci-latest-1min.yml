@@ -1,0 +1,15 @@
+name: monkci-latest-1min
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - .github/workflows/monkci-latest-1min.yml
+jobs:
+  run:
+    runs-on: monkci-ubuntu-latest
+    steps:
+      - name: 1 minute successful workload (monkci-ubuntu-latest)
+        run: |
+          echo "start $(date -u +%FT%TZ) host=$(hostname) nproc=$(nproc)"
+          sleep 60
+          echo "done $(date -u +%FT%TZ) — success"
