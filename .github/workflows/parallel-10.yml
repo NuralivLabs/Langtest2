@@ -5,7 +5,7 @@ on:
 jobs:
   parallel-test:
     name: Job ${{ matrix.job-id }}
-    runs-on: monkci-ubuntu-24.04-4
+    runs-on: monkci-ubuntu-latest
     strategy:
       fail-fast: false
       max-parallel: 50
