@@ -6,7 +6,7 @@ on:
       - .github/workflows/monkci-2vcpu-4min.yml
 jobs:
   run:
-    runs-on: monkci-ubuntu-24.04-2
+    runs-on: monkci-ubuntu-latest
     steps:
       - name: 4 minute workload (2 vCPU)
         run: |
