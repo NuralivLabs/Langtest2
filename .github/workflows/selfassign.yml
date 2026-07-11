@@ -11,7 +11,7 @@ on:
     types: created
 jobs:
   one:
-    runs-on: monkci-ubuntu-24.04-4
+    runs-on: monkci-ubuntu-24.04-2
     if: >-
       (github.event.comment.body == '#take' ||
        github.event.comment.body == '#self-assign')
