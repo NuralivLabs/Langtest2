@@ -5,7 +5,7 @@ on:
 
 jobs:
   cache-test:
-    runs-on: monkci-ubuntu-24.04-4
+    runs-on: monkci-ubuntu-24.04-2
     steps:
       - name: Create test file
         run: |
