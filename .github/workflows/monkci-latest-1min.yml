@@ -6,7 +6,7 @@ on:
       - .github/workflows/monkci-latest-1min.yml
 jobs:
   run:
-    runs-on: monkci-ubuntu-latest
+    runs-on: monkci-ubuntu-24.04-2
     steps:
       - name: 1 minute successful workload (monkci-ubuntu-latest)
         run: |
