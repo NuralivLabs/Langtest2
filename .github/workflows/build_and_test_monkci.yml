@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: monkci-ubuntu-24.04-32
+    runs-on: monkci-ubuntu-24.04-4
     strategy:
       fail-fast: false
 
