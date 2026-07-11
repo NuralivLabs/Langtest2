@@ -5,7 +5,7 @@ on:
 
 jobs:
   bench:
-    runs-on: monkci-ubuntu-24.04-2   # 2 vCPU, 7 GB RAM
+    runs-on: monkci-ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
