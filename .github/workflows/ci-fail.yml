@@ -1,0 +1,26 @@
+name: monkci-ci-fail
+on:
+  push:
+    branches:
+      - test/ci-fail
+  workflow_dispatch:
+
+jobs:
+  build-and-test:
+    runs-on: monkci-ubuntu-24.04-2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install test dependencies
+        run: pip install --quiet pytest
+
+      - name: Syntax check
+        run: python -m py_compile ci_failtest/usage_billing.py ci_failtest/test_usage_billing.py
+
+      - name: Unit tests (usage billing)
+        run: PYTHONPATH="$PWD" pytest -q -o addopts="" -p no:cacheprovider ci_failtest/test_usage_billing.py
